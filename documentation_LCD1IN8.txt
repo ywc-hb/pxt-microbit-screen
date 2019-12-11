@@ -1,0 +1,57 @@
+Bienvenue sur la documentation des différentes fonctions associées à l'écran !
+
+Si une information vous semble erronée, n'hésitez pas à nous contacter via GitHub :)
+
+
+Prérequis : 
+	--> Les couleurs utilisées par l'écran sont des couleurs au format RGB565 mais l'éditeur MakeCode ne prend en compte 		que les couleurs au format décimal, il faut donc les convertir en décimal
+	--> Lors des dessins, la taille de chaque point fait entre 1 et 4 pixels. La taille des pixels est de type 		   'DOT_PIXEL' et s'écrit 'DOT_PIXEL.DOT_PIXEL_' suivi de la taille de chaque point en pixel.
+	--> Le remplissage d'une figure est de type 'DRAW_FILL' et s'écrit 'DRAW_FILL.DRAW_' suivi de 'EMPTY' (si vous voulez 		  une figure vide) ou 'FULL' (si vous voulez une figure pleine)
+
+
+LCD1IN8.LCD1IN8_Init()
+	--> Initialise l'écran
+	--> Tout programme utlisant l'écran doit commencer par cette commande avant d'utiliser celles qui suivent
+
+LCD1IN8.LCD1IN8_Clear()
+	--> Efface tout l'écran en le mettant en blanc
+
+LCD1IN8.Filling(int Couleur)
+	--> Efface tout l'écran en le mettant dans la couleur choisie
+
+LCD1IN8.LCD_Display()
+	--> Rafraichit tout l'écran
+
+LCD1IN8.LCD_DisplayWindows(int X_start, int Y_start, int X_end, int Y_end)
+	--> Rafraichit la partie de l'écran correpsondant au rectangle de coordonnées ci-dessus
+
+LCD1IN8.LCD_SetBL(int entre 1 à 10)
+	--> Défini le niveau de luminosité de l'écran
+
+LCD1IN8.DrawPoint(int X, int Y, int Couleur, Taille_pixel)
+	--> Dessine un point aux coordonnées X, Y
+
+LCD1IN8.DrawLine(int X_start, int Y_start, int X_end, int Y_end, int Couleur, Taille_pixel, Type_ligne)
+	--> Le type de ligne est soit 'LINE_STYLE.LINE_'SOLID ou DOTTED', c'est à dire continue ou en pointillés
+	--> Dessine une ligne entre le point X_start, Y_start jusqu'au point X_end, Y_end
+
+LCD1IN8.DrawRectangle(int X_start, int Y_start, int X_end, int X_end, int Couleur, Remplissage, Taille_pixel)
+	--> Dessine un rectangle de coordonnée ci-dessus
+
+LCD1IN8.DrawCircle(int X_centre, int Y_centre, int Rayon, int Couleur, Remplissage, Taille_pixel)
+	--> Dessine un cercle de centre X, Y
+	--> Le rayon est en nombre de pixels
+
+LCD1IN8.DisString(int X, int Y, str Chaine, int Couleur)
+	--> Affiche une chaine de caractère
+	--> Chaque caractère fait 7 pixels de large pour 9 pixels de haut
+	--> Le retour à la ligne est automatique si la longeur de la chaine de caractère dépasse la largeur de l'écran
+	--> Liste non exhaustives des signes non pris en charge : °, les caractères accentués ainsi que les caractères sous 		forme d'indice ou d'exposants.
+	--> Ne pas oublier de mettre un caractère d'échappement avant de mettre des guillemets doubles
+	--> Les séquences d'échappement ne sont pas prises en compte et ne sont donc pas bien géré
+
+LCD1IN8.DisNumber(int X, int Y, int Nombre, int Couleur)
+	--> Affiche un nombre
+	--> Chaque chiffre fait 7 pixels de large pour 9 pixels de haut
+
+
