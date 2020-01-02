@@ -11,7 +11,7 @@ displayImage(10, 10, 2, pika_run.listOfColor, pika_run.paletteOfColors, pika_run
 LCD1IN8.LCD_DisplayWindows(8, 8, (pika_run.width - 1) * 2 + 10, (pika_run.height - 1) * 2 + 10);
 
 let pika_stay = displayPikachuStay();
-//displayImage(70, 10, 2, pika_stay.listOfColor, pika_stay.paletteOfColors, pika_stay.width, pika_stay.height, pika_stay.numberOfOccurence, -1, false);
+displayImage(70, 10, 2, pika_stay.listOfColor, pika_stay.paletteOfColors, pika_stay.width, pika_stay.height, pika_stay.numberOfOccurence, -1, false);
 
 LCD1IN8.LCD_DisplayWindows(68, 8, (pika_stay.width - 1) * 2 + 10 + 60, (pika_stay.height - 1) * 2 + 10);
 
@@ -21,5 +21,4 @@ LCD1IN8.LCD_DisplayWindows(68, 8, (pika_stay.width - 1) * 2 + 10 + 60, (pika_sta
 
 let texte = "Coucou tout le monde ! Comment allez-vous ?";
 displayDialogue(5, 75, texte, 0, 75);
-
 
