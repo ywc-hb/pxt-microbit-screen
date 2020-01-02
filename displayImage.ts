@@ -10,7 +10,6 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
         palette_colors --> palette de correspondance entre les indices (présents dans 'list_colors') et les couleurs en décimal
         width --> largeur de l'image
         height --> hauteur de l'image
-        couleur_transparence --> couleur de 'liste_colors' à ne pas afficher
         nombre_occurence --> nombre de pixel de l'image
         replace_color --> couleur à afficher à la place de la couleur de transparence
     */
@@ -37,14 +36,14 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
 
     //Affichage des points 1 par 1
     for (let i = 0; i < nombre_occurence; i++) {
-        if (list_colors[Math.trunc(i / 100)][i % 100] != couleur_transparence) {
+        if (list_colors[Math.trunc(i / 140)][i % 140] != couleur_transparence) {
             LCD1IN8.DrawPoint(x_depart + (i % width) * taille_pixel, y_depart + Math.trunc(i / width) * taille_pixel,
-                palette_colors[list_colors[Math.trunc(i / 100)][i % 100]], affiche_pixel);
+                palette_colors[list_colors[Math.trunc(i / 140)][i % 140]], affiche_pixel);
         }
 
         else if (replace_color != -1) {
             LCD1IN8.DrawPoint(x_depart + (i % width) * taille_pixel, y_depart + Math.trunc(i / width) * taille_pixel,
-                replace_color, affiche_pixel);
+                palette_colors[0], affiche_pixel);
         }
     }
 
