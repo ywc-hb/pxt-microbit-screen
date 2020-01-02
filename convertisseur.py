@@ -8,7 +8,7 @@
 with open("colors_in_RGB565.txt", "r") as file:
     chaine = file.read()
 
-transparency = input("Veuillez entrer la couleur de transparence de votre image")
+transparency = input("Veuillez entrer la couleur de transparence de votre image : ")
 
 liste = chaine.strip("\n").split(", ")
 
@@ -26,11 +26,11 @@ for i in liste_temp:
 		break
 
 palette_colors.remove(transparency)
-palette_colors.append(transparency)
+palette_colors.insert(0, transparency)
 
 list_colors = "[["
 for i in range(len(liste)):
-    if i % 100 == 0 and i != 0:
+    if i % 140 == 0 and i != 0:
         list_colors += "], ["
 
     if i < len(liste)-1:
