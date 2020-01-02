@@ -1,12 +1,13 @@
 function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
-    liste_colors: number[][], width: number, height: number,
+    list_colors: number[][], palette_colors: number[], width: number, height: number,
     couleur_transparence: number, nombre_occurence: number,
     replace_color: number) {
     /*
     Explication des arguments : 
         x_depart, y_depart --> coordonnée de l'image (voir avec taille pixel)
         taille_pixel --> taille de chaque pixel
-        liste_colors --> liste des couleurs de chaque pixel de l'image
+        list_colors --> liste des couleurs de chaque pixel de l'image
+        palette_colors --> palette de correspondance entre les indices (présents dans 'list_colors') et les couleurs en décimal
         width --> largeur de l'image
         height --> hauteur de l'image
         couleur_transparence --> couleur de 'liste_colors' à ne pas afficher
@@ -17,10 +18,6 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
     //Définition de la taille de chaque pixel (via fonction DOT_PIXEL)
     let affiche_pixel;
     switch (taille_pixel) {
-        case 1:
-            affiche_pixel = DOT_PIXEL.DOT_PIXEL_1;
-            break;
-
         case 2:
             affiche_pixel = DOT_PIXEL.DOT_PIXEL_2;
             break;
@@ -40,9 +37,9 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
 
     //Affichage des points 1 par 1
     for (let i = 0; i < nombre_occurence; i++) {
-        if (liste_colors[Math.trunc(i / 100)][i % 100] != couleur_transparence) {
+        if (list_colors[Math.trunc(i / 100)][i % 100] != couleur_transparence) {
             LCD1IN8.DrawPoint(x_depart + (i % width) * taille_pixel, y_depart + Math.trunc(i / width) * taille_pixel,
-                liste_colors[Math.trunc(i / 100)][i % 100], affiche_pixel);
+                palette_colors[list_colors[Math.trunc(i / 100)][i % 100]], affiche_pixel);
         }
 
         else if (replace_color != -1) {
