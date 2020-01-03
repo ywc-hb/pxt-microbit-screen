@@ -30,7 +30,7 @@ palette_colors.insert(0, transparency)
 
 list_colors = "[["
 for i in range(len(liste)):
-    if i % 140 == 0 and i != 0:
+    if i % 100 == 0 and i != 0:
         list_colors += "], ["
 
     if i < len(liste)-1:
