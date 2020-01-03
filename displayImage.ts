@@ -36,13 +36,13 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
 
     //Affichage des points 1 par 1
     for (let i = 0; i < nombre_occurence; i++) {
-        if (list_colors[Math.trunc(i / 140)][i % 140] != 0) {
+        if (list_colors[Math.trunc(i / 100)][i % 100] != 0) {
             LCD1IN8.DrawPoint(x_depart + (i % width) * taille_pixel, y_depart + Math.trunc(i / width) * taille_pixel,
-                palette_colors[list_colors[Math.trunc(i / 140)][i % 140]], affiche_pixel);
+                palette_colors[list_colors[Math.trunc(i / 100)][i % 100]], affiche_pixel);
         }
 
-        else if(!transparency) {
-            if(replace_color != -1) {
+        else if (!transparency) {
+            if (replace_color != -1) {
                 LCD1IN8.DrawPoint(x_depart + (i % width) * taille_pixel, y_depart + Math.trunc(i / width) * taille_pixel,
                     replace_color, affiche_pixel);
             }
@@ -51,6 +51,7 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
                 LCD1IN8.DrawPoint(x_depart + (i % width) * taille_pixel, y_depart + Math.trunc(i / width) * taille_pixel,
                     palette_colors[0], affiche_pixel);
             }
+
         }
     }
 
