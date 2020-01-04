@@ -29,7 +29,7 @@ for i in liste_temp:
 		liste_temp = list(filter(lambda a: a != liste_temp[0], liste_temp))
 	except IndexError:
 		break
-print(palette_colors)
+
 palette_colors.remove(transparency)
 palette_colors.insert(0, transparency)
 
