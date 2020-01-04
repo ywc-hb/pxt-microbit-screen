@@ -6,7 +6,7 @@ with open("colors_in_RGB565.txt", "r") as file:
     chaine = file.read()
 
 #transparency = int(input("Veuillez entrer la couleur de transparence de votre image : "))
-transparency = int(chaine[0])
+
 
 liste_hexa = chaine.strip("\\n").split(",")
 
@@ -14,6 +14,8 @@ liste = []
 
 for h in liste_hexa:
 	liste.append(int(h, 16))
+	
+transparency = liste[0]
 
 height = chaine.count("\n")+1 #Obtemption de la hauteur de l'image
 width = len(liste) // height #Calcul de la largeur de l'image
