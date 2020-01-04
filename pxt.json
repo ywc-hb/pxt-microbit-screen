@@ -12,12 +12,12 @@
         "main.ts",
         "pikachu.ts",
         "displayImage.ts",
-        "displayDialogue.ts"
+        "displayDialogue.ts",
+        "tests_img.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": false,
-    "preferredEditor": "tsprj",
-    "installedVersion": "workspace:513b63b0-5af0-4fa9-0e66-79e6ee76d055"
+    "preferredEditor": "tsprj"
 }
