@@ -12,8 +12,7 @@
         "main.ts",
         "pikachu.ts",
         "displayImage.ts",
-        "displayDialogue.ts",
-        "test_img.ts"
+        "displayDialogue.ts"
     ],
     "testFiles": [
         "test.ts"

@@ -10,8 +10,8 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
         width --> largeur de l'image
         height --> hauteur de l'image
         nombre_occurence --> nombre de pixel de l'image
-        replace_color --> couleur à afficher à la place de la couleur de transparence
-        transparency --> true: affiche la couleur contenue dans replace_color
+        replace_color --> couleur à afficher à la place de la couleur de transparence, la couleur par défaut si -1
+        transparency --> affiche la couleur contenue dans replace_color si 'true', sinon ne fait rien
     */
 
     //Définition de la taille de chaque pixel (via fonction DOT_PIXEL)
