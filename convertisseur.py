@@ -15,7 +15,7 @@ liste_hexa = chaine.strip("\\n").split(",")
 liste = []
 
 for h in liste_hexa:
-        liste.append(int(h, 16))
+	liste.append(int(h, 16))
 
 height = chaine.count("\n")+1 #Obtemption de la hauteur de l'image
 width = len(liste) // height #Calcul de la largeur de l'image
@@ -30,24 +30,23 @@ for i in liste_temp:
 	except IndexError:
 		break
 
-try:  
-        palette_colors.remove(transparency)
+try:
+	palette_colors.remove(transparency)
 except:
-        pass
-
+	pass
 else: 
-        palette_colors.insert(0, transparency)
+	palette_colors.insert(0, transparency)
 
 list_colors = "[["
 for i in range(len(liste)):
-    if i % 100 == 0 and i != 0:
-        list_colors += "], ["
+	if i % 100 == 0 and i != 0:
+		list_colors += "], ["
 
-    if i < len(liste)-1:
-        list_colors += str(palette_colors.index(liste[i])) + ", "
+	if i < len(liste)-1:
+		list_colors += str(palette_colors.index(liste[i])) + ", "
 
-    elif i == len(liste)-1:
-        list_colors += str(palette_colors.index(liste[i]))
+	elif i == len(liste)-1:
+		list_colors += str(palette_colors.index(liste[i]))
 
 list_colors += "]]"
 list_colors = list_colors.replace(", ]", "]")
