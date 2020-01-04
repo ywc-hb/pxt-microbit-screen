@@ -51,3 +51,4 @@ function_name = input("Veuillez entrer le nom de votre fonction : ")
 
 with open("display" + function_name + ".txt", "w") as fich
 	fich.write("function " + function_name + "(){\n    let list_colors = " + list_colors + ";\n\n    let palette_colors = " + str(palette_colors) + ";\n\n    let width = " + str(width) + ";\n    let height = " + str(height) + ";\n\nlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n    return {\n        listOfColor: list_colors,\n        paletteOfColors: palette_colors,\n        width: width,\n        height: height,\n        numberOfOccurence: nombre_occurence\n    };\n}")
+
