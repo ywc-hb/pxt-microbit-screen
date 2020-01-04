@@ -30,7 +30,11 @@ for i in liste_temp:
 	except IndexError:
 		break
 
-palette_colors.remove(transparency)
+try:  
+        palette_colors.remove(transparency)
+except:
+        pass
+
 palette_colors.insert(0, transparency)
 
 list_colors = "[["
