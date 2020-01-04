@@ -35,7 +35,8 @@ try:
 except:
         pass
 
-palette_colors.insert(0, transparency)
+else: 
+        palette_colors.insert(0, transparency)
 
 list_colors = "[["
 for i in range(len(liste)):
