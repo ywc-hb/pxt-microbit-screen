@@ -1,4 +1,3 @@
-
 // tests go here; this will not be compiled when this package is used as a library
 LCD1IN8.LCD_Init();
 LCD1IN8.LCD_Clear();
@@ -49,3 +48,6 @@ LCD1IN8.LCD_DisplayWindows(68, 8, (pika_stay1.width - 1) * 2 + 10 + 60, (pika_st
 
 let texte1 = "Coucou tout le monde ! Comment allez-vous ?";
 displayDialogue(5, 75, texte1, 0, 75);
+
+
+
