@@ -1,21 +1,17 @@
 #Le fichier d'entrée doit s'appeler 'colors_in_RGB565.txt'
-#Le fichier de sortie s'appellera 'displayImage.txt'
+#Le fichier de sortie s'appellera 'displayImage.txt' et contiendra la fonction déjà construite
 
-
+#Lecture du fichier de couleurs
 with open("colors_in_RGB565.txt", "r") as file:
     chaine = file.read()
-
-#transparency = int(input("Veuillez entrer la couleur de transparence de votre image : "))
-
+	
 
 liste_hexa = chaine.strip("\\n").split(",")
 
-liste = []
-
-for h in liste_hexa:
-	liste.append(int(h, 16))
+liste = [int(h, 16) for h in liste_hexa]
 	
 transparency = liste[0]
+#transparency = int(input("Veuillez entrer la couleur de transparence de votre image : "))
 
 height = chaine.count("\n")+1 #Obtemption de la hauteur de l'image
 width = len(liste) // height #Calcul de la largeur de l'image
@@ -53,6 +49,5 @@ list_colors = list_colors.replace(", ]", "]")
 
 function_name = input("Veuillez entrer le nom de votre fonction : ")
 
-fich = open("displayImage.txt", "w")
-fich.write("function " + function_name + "(){\n    let list_colors = " + list_colors + ";\n\n    let palette_colors = " + str(palette_colors) + ";\n\n    let width = " + str(width) + ";\n    let height = " + str(height) + ";\n\nlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n    return {\n        listOfColor: list_colors,\n        paletteOfColors: palette_colors,\n        width: width,\n        height: height,\n        numberOfOccurence: nombre_occurence\n    };\n}")
-fich.close()
+with open("displayImage.txt", "w") as fich
+	fich.write("function " + function_name + "(){\n    let list_colors = " + list_colors + ";\n\n    let palette_colors = " + str(palette_colors) + ";\n\n    let width = " + str(width) + ";\n    let height = " + str(height) + ";\n\nlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n    return {\n        listOfColor: list_colors,\n        paletteOfColors: palette_colors,\n        width: width,\n        height: height,\n        numberOfOccurence: nombre_occurence\n    };\n}")
