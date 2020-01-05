@@ -51,7 +51,6 @@ displayDialogue(3, 75, texte1, 0, 75, true, true);
 */
 LCD1IN8.LCD_Filling(0)
 
-displayImage(1, 1, displayPikachuRun(), 2, true, -1)
+displayImage(displayPikachuRun(), 1, 1, 1)
 //test(100, 1, displayPikachuRun())
-LCD1IN8.LCD_Display()
 
