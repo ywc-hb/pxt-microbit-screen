@@ -19,7 +19,7 @@ LCD1IN8.LCD_DisplayWindows(68, 8, (pika_stay.width - 1) * 2 + 10 + 60, (pika_sta
 //Exemple d'affichage de dialogue
 
 let texte = "Coucou tout le monde ! Comment allez-vous ?";
-displayDialogue(5, 75, texte, 0, 75);
+displayDialogue(5, 75, texte, 0, 75, false);
 
 delete pika_run.listOfColor
 delete pika_run.paletteOfColors
@@ -46,8 +46,8 @@ LCD1IN8.LCD_DisplayWindows(68, 8, (pika_stay1.width - 1) * 2 + 10 + 60, (pika_st
 
 //Exemple d'affichage de dialogue
 
-let texte1 = "Coucou tout le monde ! Comment allez-vous ?";
-displayDialogue(5, 75, texte1, 0, 75);
+let texte1 = "Coucou ! Comment ca va  aujourd'hui ?";
+displayDialogue(5, 75, texte1, 0, 75, true);
 
 
 
