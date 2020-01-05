@@ -2,7 +2,7 @@
 LCD1IN8.LCD_Init();
 LCD1IN8.LCD_Clear();
 
-
+/*
 //Exemple d'affichage d'image
 
 let pika_run = displayPikachuRun();
@@ -48,6 +48,10 @@ LCD1IN8.LCD_DisplayWindows(68, 8, (pika_stay1.width - 1) * 2 + 10 + 60, (pika_st
 
 let texte1 = "Coucou ! Comment ca vaaujourd'hui ?";
 displayDialogue(3, 75, texte1, 0, 75, true, true);
+*/
+LCD1IN8.LCD_Filling(0)
 
-
+test(1, 1, displayPikachuStay())
+test(100, 1, displayPikachuRun())
+//LCD1IN8.LCD_Display()
 

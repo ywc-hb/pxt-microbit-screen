@@ -58,3 +58,8 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
     //Rafraichissement de la partie de l'écran correspondant à la taille de l'image doit se faire en dehors de cette fonction
     //test(x_depart - taille_pixel, y_depart - taille_pixel, (width - 1) * taille_pixel + 10, (height - 1) * taille_pixel + 10)
 }
+
+function test(x_depart: number, y_depart: number, image: any, taille_pixel: number = 1) {
+    displayImage(x_depart, y_depart, taille_pixel, image.listOfColor, image.paletteOfColors, image.width, image.height, image.numberOfOccurence, -1, false);
+    LCD1IN8.LCD_DisplayWindows(x_depart - taille_pixel, y_depart - taille_pixel, (image.width - 1) * taille_pixel + x_depart, (image.height - 1) * taille_pixel + y_depart);
+}
