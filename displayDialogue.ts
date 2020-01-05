@@ -1,5 +1,5 @@
 function displayDialogue(x_start: number, y_start: number,
-    text: string, color: number, speed: number, bold: boolean, highlight: boolean) {
+    text: string, color: number, speed: number, bold: boolean = false, highlight: boolean = false) {
     /*
     x_start, y_start --> Coordonnées de départs du texte
     text --> Texte à écrire
