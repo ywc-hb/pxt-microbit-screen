@@ -57,8 +57,11 @@ function displayImageParameters(x_depart: number, y_depart: number, taille_pixel
     LCD1IN8.LCD_DisplayWindows(x_depart - taille_pixel, y_depart - taille_pixel, (width - 1) * taille_pixel + x_depart, (height - 1) * taille_pixel + y_depart)
 
 } 
-function displayImage(picture: any, x: number, y: number, taille_pixel: number){
-    displayImageParameters(x, y, taille_pixel, picture.listOfColor, picture.paletteOfColors, picture.width, picture.height, picture.numberOfOccurence, 1, true);
+function displayImage(picture: any, x: number, y: number, taille_pixel: number = 1){
+    displayImageParameters(x, y, taille_pixel, picture.listOfColor, picture.paletteOfColors, picture.width, picture.height, picture.numberOfOccurence, -1, true);
     delete picture.listOfColor
     delete picture.paletteOfColors
+//    delete picture.width
+//    delete picture.height
+//    delete picture.numberOfOccurence
 }
