@@ -15,7 +15,7 @@ function displayPikachuRun() {
 
     let nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;
     return {
-        listOfColor: list_colors,
+        listOfColors: list_colors,
         paletteOfColors: palette_colors,
         width: width,
         height: height,
@@ -31,7 +31,7 @@ function displayPikachuStay() {
     let height = 21;
     let nombre_occurence: number = (liste_colors.length - 1) * (liste_colors[0].length) + liste_colors[liste_colors.length - 1].length;
     return {
-        listOfColor: liste_colors,
+        listOfColors: liste_colors,
         paletteOfColors: palette_colors,
         width: width,
         height: height,
