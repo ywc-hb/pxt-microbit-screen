@@ -12,7 +12,8 @@ displayImage(50, 40, 1, -1, true, displayPikachuStay())
 */
 
 let test = {
-    listOfColor: [[2, 2, 2, 2, 2], [1, 0, 1, 0, 1]],
+    listOfColorNumber: [[2, 2, 2, 2, 2]], 
+    listOfColor: [[1, 0, 1, 0, 1]],
     paletteOfColors: [1, 64512], 
     width: 10,
     height: 1,
