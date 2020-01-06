@@ -20,4 +20,14 @@ let test = {
     numberOfOccurence: 10
 };
 
-displayImage(50, 40, 2, test, false)
+let test2 = {
+    listOfColorNumber: [[2, 2, 2, 2, 2]],
+    listOfColor: [[1, 0, 1, 0, 1]],
+    paletteOfColors: [1, 64512],
+    width: 10,
+    height: 1,
+    numberOfOccurence: 10
+};
+
+displayImage(50, 40, 2, test, true)
+displayImage(50, 45, 2, test2, false)

@@ -36,7 +36,7 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
 
     let noPx = 0;
     for(let i = 0; i < (picture.listOfColorNumber.length - 1) * (picture.listOfColorNumber[0].length) + picture.listOfColorNumber[picture.listOfColorNumber.length - 1].length; i++) {
-        if(picture.listOfColor[Math.trunc(noPx / 100)][noPx % 100] != 0 || !transparency) {
+        if (!transparency || (picture.listOfColor[Math.trunc(i / 100)][i % 100] != 0 && transparency)) {
             for (let j = 0; j < picture.listOfColorNumber[Math.trunc(i / 100)][i % 100]; j++) {
                 LCD1IN8.DrawPoint(x_depart + (noPx % picture.width) * taille_pixel, y_depart + Math.trunc(noPx / picture.width) * taille_pixel,
                     picture.paletteOfColors[picture.listOfColor[Math.trunc(i / 100)][i % 100]], affiche_pixel);
@@ -45,7 +45,7 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
         }
 
         else {
-            noPx++
+            noPx += picture.listOfColorNumber[Math.trunc(i / 100)][i % 100]
         }
     }
     
