@@ -11,6 +11,7 @@ displayImage(80, 5, displayPikachuStay(), 2, false)
 
 //Exemple d'affichage de texte
 
-displayDialogue(3, 64, "Coucou tout le monde !", 0, 0)
-displayDialogue(55, 79, "Bonsoir", 0, 100, true)
-displayDialogue(65, 94, "Hey !", 0, 50, true, true)
+displayDialogue(3, 64, "Vous pouvez afficher  du texte...", 50, 0)
+displayDialogue(80, 77, "en gras, ", 0, 100, true)
+displayDialogue(3, 90, "souligne,", 0, 50, false, true)
+displayDialogue(63, 90, " ou les deux!", 0, 0, true, true)
