@@ -66,7 +66,7 @@ else:
 list_colors = [[]]
 for i in range((len(liste_tab1) - 1) * len(liste_tab1[0]) + len(liste_tab1[-1])):
 	if len(list_colors[-1]) == 100:
-		list_colors[-1].append([palette_colors.index(liste[0])])
+		list_colors.append([palette_colors.index(liste[0])])
 	
 	else:
 		list_colors[-1].append(palette_colors.index(liste[0]))
