@@ -51,5 +51,9 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
     
     LCD1IN8.LCD_DisplayWindows(x_depart - taille_pixel, y_depart - taille_pixel, (picture.width - 1) * taille_pixel + x_depart, (picture.height - 1) * taille_pixel + y_depart)
     delete picture.listOfColor
+    delete picture.listOfColorNumber
     delete picture.paletteOfColors
+    delete picture.numberOfOccurence
+    delete picture.width
+    delete picture.height
 }
