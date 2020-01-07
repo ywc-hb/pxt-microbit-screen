@@ -92,21 +92,21 @@ for i in function_name_tab:
 	function_name += i.capitalize()
 
 text_of_function = "function display" + function_name + "(){\n" \
-							"\tlet list_colors_number = " + str(liste_tab1) + ";\n" \
-							"\tlet list_colors = " + str(list_colors) + ";\n" \
-							"\tlet palette_colors = " + str(palette_colors) + ";\n" \
-							"\tlet width = " + str(width) + ";\n" \
-							"\tlet height = " + str(height) + ";\n" \
-							"\tlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n" \
-							"\treturn {\n" \
-								"\t\tlistOfColorNumber: list_colors_number,\n" \
-								"\t\tlistOfColor: list_colors,\n" \
-								"\t\tpaletteOfColors: palette_colors,\n" \
-								"\t\twidth: width,\n" \
-								"\t\theight: height,\n" \
-								"\t\tnumberOfOccurence: nombre_occurence\n" \
-							"\t};\n" \
-  						"}"
+						"\tlet list_colors_number = " + str(liste_tab1) + ";\n" \
+						"\tlet list_colors = " + str(list_colors) + ";\n" \
+						"\tlet palette_colors = " + str(palette_colors) + ";\n" \
+						"\tlet width = " + str(width) + ";\n" \
+						"\tlet height = " + str(height) + ";\n" \
+						"\tlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n" \
+						"\treturn {\n" \
+							"\t\tlistOfColorNumber: list_colors_number,\n" \
+							"\t\tlistOfColor: list_colors,\n" \
+							"\t\tpaletteOfColors: palette_colors,\n" \
+							"\t\twidth: width,\n" \
+							"\t\theight: height,\n" \
+							"\t\tnumberOfOccurence: nombre_occurence\n" \
+						"\t};\n" \
+					"}"
 
 
 with open("display" + function_name + ".txt", "w") as fich:
