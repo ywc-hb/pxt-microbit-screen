@@ -1,6 +1,6 @@
 function displayImage(x_depart: number, y_depart: number, 
     picture: { listOfColorNumber: number[][], listOfColor: number[][], paletteOfColors: number[], width: number, height: number, numberOfOccurence: number }, 
-    transparency: boolean = false, taille_pixel: number = 1) {
+    transparency: boolean = true, taille_pixel: number = 1) {
     /*
     Explication des arguments : 
         x_depart, y_depart --> coordonnée de l'image (voir avec taille pixel)
