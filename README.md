@@ -21,7 +21,15 @@ If you don't speak french, you can use a [translator](https://translate.google.c
 
 ### Utilisation du fichier convertisseur ###
 
-Pour obtenir les couleurs de chaque pixel dans le bon format, veuillez utiliser _mettre ici le nom du convertisseur de pixels et les instructions à suivre_
+Pour obtenir les couleurs de chaque pixel dans le bon format, vous pouvez utiliser le logiciel _lcd-image-converter_ (téléchargeable gratuitement [ici](https://downloads.riuson.com/lcd-image-converter) ).    
+Il vous suffit ensuite d'ouvrir l'application, le choisir "New Image" et d'importer votre image.      
+Allez ensuite dans "Options --> Convertion".      
+Vérifiez le bon réglage de quelques options : 
+- "Preset" doit être réglé sur _"Color R5G6B5"_
+- "Main Scan Direction" doit être réglé sur _"Top to Bottom"_ et "Line Scan Direction" sur _"Forward"_
+- Dans l'onglet "Image", "Block size" doit être réglé sur _"16 bits"_, le préfixe doit être _"0x"_, le délitieur doit être _", "_ et il ne doit pas y avoir de suffixe
+
+Ensuite, il vous suffit de cliquer sur _"Show Preview"_ puis de copier / coller la liste des couleurs dans le fichier _`colors_in_RGB565.txt`_
 
 Ce convertisseur doit se placer dans le même dossier que votre fichier de couleurs issue du logiciel ci-dessus.    
 Le fichier contenant les couleurs doivent se trouver dans un fichier texte nommé `colors_in_RGB565.txt` .     
