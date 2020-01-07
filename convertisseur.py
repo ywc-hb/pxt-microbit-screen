@@ -85,7 +85,11 @@ function_name = input("Veuillez entrer le nom de votre fonction : ")
 while function_name.lower() == "image":
 	function_name = input("Veuillez entrer le nom de votre fonction (elle ne peut pas s'appeler \'image\') : ")
 
-function_name = function_name.lower().capitalize()
+function_name_tab = function_name.split()
+
+function_name = ""
+for i in function_name_tab:
+	function_name += i.capitalize()
 
 text_of_function = "function display" + function_name + "(){\n" \
 							"\tlet list_colors_number = " + str(liste_tab1) + ";\n" \
