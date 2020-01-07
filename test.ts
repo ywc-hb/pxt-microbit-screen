@@ -4,13 +4,13 @@ LCD1IN8.LCD_Clear();
 
 //Exemple d'affichage d'image
 
-displayImage(5, 5, 2, displayPikachuRun(), true)
-displayImage(80, 5, 2, displayPikachuStay(), false)
+displayImage(5, 5, displayPikachuRun(), true, 2)
+displayImage(80, 5, displayPikachuStay())
 
 //displayImage(1, 1, 1, displayFullScreenTwo(), false)
 
 //Exemple d'affichage de texte
 
-displayDialogue(2, 64, "Coucou tout le monde !", 0, 0)
-displayDialogue(55, 79, "Bonsoir", 0, 0, true)
-displayDialogue(65, 94, "Hey !", 0, 0, true, true)
+displayDialogue(3, 64, "Coucou tout le monde !", 0, 0)
+displayDialogue(55, 79, "Bonsoir", 0, 100, true)
+displayDialogue(65, 94, "Hey !", 0, 50, true, true)
