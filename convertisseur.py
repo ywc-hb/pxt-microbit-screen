@@ -31,24 +31,79 @@ try:
 except ValueError:
 	pass
 
+
+
 #### Création de la liste de couleurs ####
-list_colors = "[["
+
+## Création du 1er tableau de valeurs ##
+liste_tab1 = [[]]
+nb = 1
+
 for i in range(len(liste)):
-	if i % 100 == 0 and i != 0:
-		list_colors += "], ["
+	try:
+		if liste[i] == liste[i+1]:
+			nb += 1
+	
+		else:
+			if len(liste_tab1[-1]) == 100:
+				liste_tab1.append([nb])
+		
+			else:
+				liste_tab1[-1].append(nb)
+		
+			nb = 1
+	
+	except IndexError:
+		break
 
-	if i < len(liste)-1:
-		list_colors += str(palette_colors.index(liste[i])) + ", "
+if len(liste_tab1[-1]) == 100:
+	liste_tab1.append([nb])
 
-	elif i == len(liste)-1:
-		list_colors += str(palette_colors.index(liste[i]))
+else:
+	liste_tab1[-1].append(nb)
 
-list_colors += "]]"
-list_colors = list_colors.replace(", ]", "]")
+## Création du 2e tableau de valeurs ##
+list_colors = [[]]
+for i in range((len(liste_tab1) - 1) * len(liste_tab1[0]) + len(liste_tab1[-1])):
+	if len(list_colors[-1]) == 100:
+		list_colors[-1].append([palette_colors.index(liste[0])])
+	
+	else:
+		list_colors[-1].append(palette_colors.index(liste[0]))
+	
+	for j in range(liste_tab1[i // 100][i % 100]):
+		try:
+			del(liste[0])
+
+		except IndexError:
+			break
+
 
 #### Ecriture de la fonction dans un fichier texte ####
 function_name = input("Veuillez entrer le nom de votre fonction : ")
 
-with open("display" + function_name + ".txt", "w") as fich
-	fich.write("function " + function_name + "(){\n    let list_colors = " + list_colors + ";\n\n    let palette_colors = " + str(palette_colors) + ";\n\n    let width = " + str(width) + ";\n    let height = " + str(height) + ";\n\nlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n    return {\n        listOfColor: list_colors,\n        paletteOfColors: palette_colors,\n        width: width,\n        height: height,\n        numberOfOccurence: nombre_occurence\n    };\n}")
+while function_name.lower() == "image":
+	function_name = input("Veuillez entrer le nom de votre fonction (elle ne peut pas s'appeler \'image\') : ")
 
+function_name = function_name.lower().capitalize()
+
+text_of_function = "function display" + function_name + "(){\n" \
+							"\tlet list_colors_number = " + str(liste_tab1) + ";\n" \
+							"\tlet list_colors = " + str(list_colors) + ";\n" \
+							"\tlet palette_colors = " + str(palette_colors) + ";\n" \
+							"\tlet width = " + str(width) + ";\n" \
+							"\tlet height = " + str(height) + ";\n" \
+							"\tlet nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;\n" \
+							"\treturn {\n" \
+								"\t\tlistOfColorNumber: list_colors_number,\n" \
+								"\t\tlistOfColor: list_colors,\n" \
+								"\t\tpaletteOfColors: palette_colors,\n" \
+								"\t\twidth: width,\n" \
+								"\t\theight: height,\n" \
+								"\t\tnumberOfOccurence: nombre_occurence\n" \
+							"\t};\n" \
+  						"}"
+
+
+with open("display" + function_name + ".txt", "w") as fich:
+	fich.write(text_of_function)

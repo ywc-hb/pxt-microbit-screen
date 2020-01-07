@@ -1,6 +1,6 @@
-function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
-    replace_color: number, transparency: boolean, 
-    picture: {listOfColor: number[][], paletteOfColors: number[], width: number, height: number, numberOfOccurence: number}) {
+function displayImage(x_depart: number, y_depart: number, taille_pixel: number, 
+    picture: { listOfColorNumber: number[][], listOfColor: number[][], paletteOfColors: number[], width: number, height: number, numberOfOccurence: number }, 
+    transparency: boolean) {
     /*
     Explication des arguments : 
         x_depart, y_depart --> coordonnée de l'image (voir avec taille pixel)
@@ -34,27 +34,26 @@ function displayImage(x_depart: number, y_depart: number, taille_pixel: number,
             break;
     }
 
-    //Affichage des points 1 par 1
-    for (let i = 0; i < picture.numberOfOccurence; i++) {
-        if (picture.listOfColor[Math.trunc(i / 100)][i % 100] != 0) {
-            LCD1IN8.DrawPoint(x_depart + (i % picture.width) * taille_pixel, y_depart + Math.trunc(i / picture.width) * taille_pixel,
-                picture.paletteOfColors[picture.listOfColor[Math.trunc(i / 100)][i % 100]], affiche_pixel);
+    let noPx = 0;
+    for(let i = 0; i < (picture.listOfColorNumber.length - 1) * (picture.listOfColorNumber[0].length) + picture.listOfColorNumber[picture.listOfColorNumber.length - 1].length; i++) {
+        if (!transparency || (picture.listOfColor[Math.trunc(i / 100)][i % 100] != 0 && transparency)) {
+            for (let j = 0; j < picture.listOfColorNumber[Math.trunc(i / 100)][i % 100]; j++) {
+                LCD1IN8.DrawPoint(x_depart + (noPx % picture.width) * taille_pixel, y_depart + Math.trunc(noPx / picture.width) * taille_pixel,
+                    picture.paletteOfColors[picture.listOfColor[Math.trunc(i / 100)][i % 100]], affiche_pixel);
+                noPx ++
+            }
         }
 
-        else if (!transparency) {
-            if (replace_color != -1) {
-                LCD1IN8.DrawPoint(x_depart + (i % picture.width) * taille_pixel, y_depart + Math.trunc(i / picture.width) * taille_pixel,
-                    replace_color, affiche_pixel);
-            }
-
-            else {
-                LCD1IN8.DrawPoint(x_depart + (i % picture.width) * taille_pixel, y_depart + Math.trunc(i / picture.width) * taille_pixel,
-                    picture.paletteOfColors[0], affiche_pixel);
-            }
-
+        else {
+            noPx += picture.listOfColorNumber[Math.trunc(i / 100)][i % 100]
         }
     }
+    
     LCD1IN8.LCD_DisplayWindows(x_depart - taille_pixel, y_depart - taille_pixel, (picture.width - 1) * taille_pixel + x_depart, (picture.height - 1) * taille_pixel + y_depart)
     delete picture.listOfColor
+    delete picture.listOfColorNumber
     delete picture.paletteOfColors
+    delete picture.numberOfOccurence
+    delete picture.width
+    delete picture.height
 }

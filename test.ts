@@ -1,26 +1,16 @@
 // tests go here; this will not be compiled when this package is used as a library
 LCD1IN8.LCD_Init();
 LCD1IN8.LCD_Clear();
-/*
+
 //Exemple d'affichage d'image
 
-displayImage(displayPikachuRun(), 10, 10, 2);
+displayImage(5, 5, 2, displayPikachuRun(), true)
+displayImage(80, 5, 2, displayPikachuStay(), false)
 
-displayImage(displayPikachuStay(), 70, 10);
+//displayImage(1, 1, 1, displayFullScreenTwo(), false)
 
+//Exemple d'affichage de texte
 
-//Exemple d'affichage de dialogue
-
-let texte1 = "Coucou ! Comment ca vaaujourd'hui ?";
-displayDialogue(3, 75, texte1, 0, 75, true, true);
-
-let texte = "Coucou  tout le monde !";
-displayDialogue(100, 3, texte, 0, 75);*/
-
-displayImage(1, 1, 1, -1, true, displayPikachuRun())
-displayImage(100, 1, 1, -1, true, displayPikachuStay())
-displayImage(1, 40, 1, -1, true, displayPikachuRun())
-displayImage(100, 40, 1, -1, true, displayPikachuStay())
-displayImage(50, 1, 1, -1, true, displayPikachuRun())
-displayImage(50, 40, 1, -1, true, displayPikachuStay())
-
+displayDialogue(2, 64, "Coucou tout le monde !", 0, 0)
+displayDialogue(55, 79, "Bonsoir", 0, 0, true)
+displayDialogue(65, 94, "Hey !", 0, 0, true, true)

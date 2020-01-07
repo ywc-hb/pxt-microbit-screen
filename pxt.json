@@ -12,11 +12,15 @@
         "main.ts",
         "pikachu.ts",
         "displayImage.ts",
-        "displayDialogue.ts"
+        "displayDialogue.ts",
+        "fullScreen.ts"
     ],
     "testFiles": [
         "test.ts"
     ],
     "public": false,
-    "preferredEditor": "tsprj"
+    "preferredEditor": "tsprj",
+    "supportedTargets": [
+        "microbit"
+    ]
 }
