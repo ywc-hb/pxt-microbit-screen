@@ -39,6 +39,23 @@ function displayPikachuStay() {
     };
 }
 
+function displayConv() {
+    let list_colors_number = [[2, 2, 2, 2, 2, 1, 1, 3]];
+    let list_colors = [[0, 1, 0, 1, 0, 1, 0, 2]];
+    let palette_colors = [64512, 1, 2];
+    let width = 15;
+    let height = 1;
+    let nombre_occurence: number = (list_colors.length - 1) * (list_colors[0].length) + list_colors[list_colors.length - 1].length;
+    return {
+        listOfColorNumber: list_colors_number,
+        listOfColor: list_colors,
+        paletteOfColors: palette_colors,
+        width: width,
+        height: height,
+        numberOfOccurence: nombre_occurence
+    };
+}
+
 
 
 
