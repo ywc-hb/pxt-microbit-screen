@@ -4,14 +4,9 @@ function displayImage(x_depart: number, y_depart: number,
     /*
     Explication des arguments : 
         x_depart, y_depart --> coordonnée de l'image (voir avec taille pixel)
+        picture --> fonction correspondant à l'image à afficher
         taille_pixel --> taille de chaque pixel
-        list_colors --> liste des couleurs de chaque pixel de l'image
-        palette_colors --> palette de correspondance entre les indices (présents dans 'list_colors') et les couleurs en décimal
-        width --> largeur de l'image
-        height --> hauteur de l'image
-        nombre_occurence --> nombre de pixel de l'image
-        replace_color --> couleur à afficher à la place de la couleur de transparence
-        transparency --> true: affiche la couleur contenue dans replace_color
+        transparency --> active ou non la transparence de l'image
     */
 
     //Définition de la taille de chaque pixel (via fonction DOT_PIXEL)
