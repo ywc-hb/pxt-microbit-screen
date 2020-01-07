@@ -4,7 +4,7 @@ LCD1IN8.LCD_Clear();
 
 //Exemple d'affichage d'image
 
-displayImage(5, 5, displayPikachuRun(), true, 2)
+displayImage(5, 5, displayPikachuRun(), 2, true)
 displayImage(80, 5, displayPikachuStay())
 
 //displayImage(1, 1, 1, displayFullScreenTwo(), false)
