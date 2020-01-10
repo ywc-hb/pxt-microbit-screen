@@ -3,17 +3,17 @@ Se référer plus bas pour la version française
 
 ### Conventions of this readme.md ###
 
-1. Variables that you have to name are written between simple quote
-2. Variables followed by a _?_ are optionals
+1. Variables written between simple quotes are yours and you can give them any name 
+2. Variables followed by a _?_ are optionals (the default value is written after the _=_ )
 
 
 ## How to display a picture ###
 
-1. You have to start by creating a file that will group your pictures (you can creat as many files as you want)
-2. Your file will contain a function that you'll call when you'll show your picture. To creat this function, you just have to use the converter that you could find in the repository.
+1. You have to start by creating a file that will group your pictures (you can create as many files as you want)
+2. Your file will contain a function that you'll call when you'll show the picture. To create this function, you just have to use the converter that you could find in the repository.
 > You can refer to the section "Converter"
 
-3. Then, you just have to call the function named `displayImage()` with the `x` and the `y` of the top left of the picture's location: `displayImage(x, y, 'picture s function'(), transparency?, pixel_size?)'
+3. Then, you just have to call the function named `displayImage()` with the `x` and the `y` of the top left of the picture's location: `displayImage(x, y, 'picture s function'(), transparency?: boolean = true, pixel_size?: int = 1)'
 
 4. Incredible ! Your picture is displayed as if by magic
 
@@ -29,20 +29,20 @@ Check if all settings are good :
 - In the tab "Image", "Block size" have to be on _"16 bits"_, the prefix has to be _"0x"_ and the delimiter _", "_. You don't need a suffix
 Then, you just have to clic on "Show Preview" and copy past the list of colors in a file which must be called _`colors_in_RGB565.txt`_.
 
-Afterwards, download the file named _`converter.py`_ in the repository and run it in the same directory as the _`colors_in_RGB565.txt`_. Then, you can copy past the contents of the output file (which is named after your function) in the file `.ts`.
+Afterwards, download the file named _`converter.py`_ in the repository and run it in the same directory as _`colors_in_RGB565.txt`_. Then, you can copy past the contents of the output file (which is named after your function) in the file `.ts`.
 
 
 ## How to display bold or underlined text ##
 
 You just have to call the function `displayDialogue(x: int, y: int, "your text", color: int, speed: int, bold?: boolean = false, underline?: boolean = false)`.     
-Speed is the number of second between the display of two letters. If you don't need a bold or underlined text and neither the speed, you can prefer the use of the `DisString(...)` function.
-
-
-
-
-
-
-
+Speed is the number of millisecond between the display of two letters. If you don't need a bold or underlined text and neither the speed, you can prefer the use of the `DisString(...)` function because its execution is faster.
+       
+       
+      
+       
+      
+      
+      
 # Extension améliorant et facilitant l'utilisation de l'écran 1.8in Waveshare pour microbit #
 
 ### Conventions de ce README.md ###
