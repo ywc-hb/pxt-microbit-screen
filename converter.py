@@ -80,10 +80,10 @@ for i in range((len(liste_tab1) - 1) * len(liste_tab1[0]) + len(liste_tab1[-1]))
 
 
 #### Ecriture de la fonction dans un fichier texte ####
-function_name = input("Veuillez entrer le nom de votre fonction : ")
+function_name = input("Enter the name of your function : ")
 
 while function_name.lower() == "image":
-	function_name = input("Veuillez entrer le nom de votre fonction (elle ne peut pas s'appeler \'image\') : ")
+	function_name = input("Enter the name of your function (it can't be called \'image\') : ")
 
 function_name_tab = function_name.split()
 
