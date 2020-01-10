@@ -1,5 +1,5 @@
 function displayDialogue(x_start: number, y_start: number,
-    text: string, color: number, speed: number, bold: boolean = false, highlight: boolean = false) {
+    text: string, color: number, speed: number, bold: boolean = false, underline: boolean = false) {
     /*
     x_start, y_start --> Coordonnées de départs du texte
     text --> Texte à écrire
@@ -27,7 +27,7 @@ function displayDialogue(x_start: number, y_start: number,
             LCD1IN8.DisString(x, y + 1, text[i], color)
         }
 
-        if(highlight) {
+        if(underline) {
             LCD1IN8.DrawLine(x, y + 12, x + 7, y + 12, 0, DOT_PIXEL.DOT_PIXEL_1, LINE_STYLE.LINE_SOLID)
         }
 
